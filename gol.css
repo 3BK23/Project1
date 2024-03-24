@@ -1,88 +1,201 @@
-html, body {
-    height:100%;
-} 
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h3{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#14043e
+}
+.popup{
+    background-color: rgb(62, 149, 231, 0.7);
+    width: 600px;
+    height: 600px;
+    padding: 30px 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    z-index: 1;
+    text-align: center;
+}
 
-body{
+.popup button {
+    display: block;
+    margin: 0 0 20px auto;
+    background-color: transparent;
+    font-size: 30px;
+    color: #1f1673;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.popup p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #390da1;
+    text-align: justify;
+    margin: 20px 0;
+    line-height: 25px;
+}
+
+
+html,
+body {
+    position: relative;
+    min-width: 500px;
+    min-height: 700px;
+    height: 100%;
+}
+
+body {
     padding-left: 100px;
-    padding-bottom : 50px;
+    padding-bottom: 50px;
     /* background-color: azure; */
     background-image: url(./background.jpg);
     background-size: cover;
     background-size: auto 100%;
 }
-.buttonDarkMode{
+
+.buttonDarkMode {
     background-image: url(./dark\ mode\ background.jpg);
+    background-color: black;
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-size: cover;
     color: bisque;
 
-    }
-    
-/* #large-container{ */
-    /* display:flex;
-    flex-direction: column;
-    justify-items: center;
-    height: 100rem;
-    width: 100rem; */
-/* } */
-#title{
+
+}
+
+
+#title {
     display: flex;
     color: bisque;
     font-size: 100px;
     justify-content: center;
     font-style: italic;
-    height:100px;
+    height: 100px;
+    margin-bottom: 50px;
 }
-h2{
-    color:bisque;
-}
-#canvas{
-opacity: 0.8;
 
+h2 {
+    color: bisque;
+}
+#large-container{
+    width:95%;
+
+}
+
+#canvas {
+    opacity: 0.8;
+}
+
+#defaultCanvas0 {
+    border: 20px solid whitesmoke;
+    border-right: none;
 }
 
 #setting-selection{
     display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: flex-start;
-    height: 50%;
-    
-}
-form{
-    color:bisque;
-}
-.colorPickerContainer{
-    color:bisque;
+    width: 100%;
+    border: 5px solid bisque;
+    border-bottom: none;
+    margin-top: 20px;
+    padding:10px;
+    color: bisque;
     font-size: 20px;
 }
-.colorPickerContainer>input[type="color"]{
+
+
+#setting-secondline{
+    border: 5px solid whitesmoke;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-top: none;
+    margin-bottom: 20px;
+    padding:10px;
+
+}
+
+
+form>select{
+    margin-right: 20px;
+    width:10%;
+}
+
+
+.colorPickerContainer {
+    color: bisque;
+    font-size: 20px;
+    margin-right: 50px;
+}
+
+.colorPickerContainer>input[type="color"] {
     width: 100px;
     height: 25px;
 }
 
 .slidecontainer {
-    width: 10%;
-  }
+    display: flex;
+    align-items: center;
+    width: auto;
+    font-size: 20px;
+    color: bisque;
+    
+}
+
+
 .slider {
     -webkit-appearance: none;
-    width: 100%;
+    width: 80%;
     height: 25px;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-  }
-  
+}
+
 .slider:hover {
     opacity: 1;
-  }
-  .slider::-webkit-slider-thumb {
+}
+
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
     height: 25px;
     background: #b925c4;
-    cursor: pointer;
-  }
-  
+    cursor:grab;
+}
+.slidecontainer>label{
+    display:flex;
+    padding: 0;
+    margin-left: 20px;
+    margin-right:5px;
+
+    width: 100px;
+
+}
+
+#buttonContainer>button{
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    width: 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:20px;
+    background-image:url(./button\ background.jpg);
+    font-weight: bold;
+
+}

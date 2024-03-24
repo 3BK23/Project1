@@ -15,6 +15,14 @@ let currentPoint = [0, 0];
 
 window.addEventListener("load", () => {
 
+    let closeButtons = document.querySelectorAll(".close");
+
+    for (let i = 0; i < closeButtons.length; i++) {
+      closeButtons[i].addEventListener("click", function() {
+        document.querySelector(".popup").style.display = "none";
+      });
+    }
+
     document.querySelector(".slidecontainer").addEventListener("change", (e) => {
         const value = parseInt(e.target.value)
         frameRate(value);
@@ -59,14 +67,20 @@ window.addEventListener("load", () => {
     document.querySelector("#reproduction-select").addEventListener("change", (e) => {
         reproduction_threshold = parseInt(e.target.value)
     })
-
+    let sliderValue = document.getElementById("myRange");
+    let output = document.getElementById("demo");
+    output.innerHTML = sliderValue.value;
+    sliderValue.oninput = function() {
+    output.innerHTML = this.value;
+      }
 
 })
+
 
 function setup() {
     frameRate(5)
     /* Set the canvas to be under the element #canvas*/
-    const canvas = createCanvas(windowWidth - 1000, windowHeight - 1000);
+    const canvas = createCanvas(windowWidth - 200, windowHeight - 200);
     canvas.parent(document.querySelector("#canvas"));
 
     /*Calculate the number of columns and rows */
@@ -124,9 +138,9 @@ function draw() {
                 } else
                     fill(boxColor);
             } else if (currentBoard[i][j] == 2) {
-                fill(177, 128, 215);
+                fill(58, 64, 160);
             } else {
-                fill(255, 228, 196);
+                fill(133, 157, 204);
             }
 
             stroke(strokeColor);
@@ -163,9 +177,7 @@ function keyPressed() {
         currentBoard[currentPoint[0]][currentPoint[1]] = 0;
         let y = currentPoint[1] === rows - 1 ? 0 : currentPoint[1] + 1;
         currentPoint = [currentPoint[0], y];
-    } else if (keyCode === ENTER) {
-        
-      }
+    } 
     currentBoard[currentPoint[0]][currentPoint[1]] = 2;
     loop();
 }
